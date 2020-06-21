@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-WeatherPredictor/Pods-WeatherPredictor-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MMExtensions/MMExtensions.framework
+${BUILT_PRODUCTS_DIR}/MMNetworkManager/MMNetworkManager.framework

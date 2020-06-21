@@ -1,0 +1,20 @@
+PODS:
+  - MMExtensions (0.0.4)
+  - MMNetworkManager (0.0.3)
+
+DEPENDENCIES:
+  - MMExtensions
+  - MMNetworkManager
+
+SPEC REPOS:
+  trunk:
+    - MMExtensions
+    - MMNetworkManager
+
+SPEC CHECKSUMS:
+  MMExtensions: 3eca4d593b43c892cb8f7832a0c7bad7023f3d76
+  MMNetworkManager: 138defbec0a69b68f7050ddf5bcdb4ee56e03572
+
+PODFILE CHECKSUM: cbb1a61fa86b224d04443571746e2ae5aa749a8e
+
+COCOAPODS: 1.9.3
