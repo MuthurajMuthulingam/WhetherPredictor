@@ -10,16 +10,50 @@
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="Search" id="BYZ-38-t0r" customClass="WPSearchViewController" customModule="WeatherPredictor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter minimum 3 city name, commo seperated" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b3A-WE-hVX">
+                                <rect key="frame" x="10" y="98" width="394" height="89.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QYh-cF-zYE">
+                                <rect key="frame" x="10" y="197.5" width="394" height="605.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QYh-cF-zYE" firstAttribute="top" secondItem="b3A-WE-hVX" secondAttribute="bottom" constant="10" id="74W-d2-0iD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b3A-WE-hVX" secondAttribute="trailing" constant="10" id="EkM-xq-cs4"/>
+                            <constraint firstItem="b3A-WE-hVX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="JKc-xd-G0G"/>
+                            <constraint firstItem="b3A-WE-hVX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Nsd-5b-ui1"/>
+                            <constraint firstItem="QYh-cF-zYE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Q1a-Ep-Zpx"/>
+                            <constraint firstItem="b3A-WE-hVX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="XHT-3u-hUF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QYh-cF-zYE" secondAttribute="bottom" constant="10" id="eVX-cJ-wfg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QYh-cF-zYE" secondAttribute="trailing" constant="10" id="f0i-lS-hS4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mER-Gm-DLk"/>
+                    <navigationItem key="navigationItem" id="mER-Gm-DLk">
+                        <barButtonItem key="rightBarButtonItem" title="Search" style="plain" id="gnN-X5-gji">
+                            <connections>
+                                <action selector="searchClicked:" destination="BYZ-38-t0r" id="286-Nn-KQn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchButton" destination="gnN-X5-gji" id="x7m-W1-bgT"/>
+                        <outlet property="tableView" destination="QYh-cF-zYE" id="pEK-jK-VuZ"/>
+                        <outlet property="textView" destination="b3A-WE-hVX" id="FCJ-si-sUa"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2550.7246376811595" y="-403.125"/>
         </scene>
@@ -29,6 +63,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gy9-td-ea6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W1x-3e-iQO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
