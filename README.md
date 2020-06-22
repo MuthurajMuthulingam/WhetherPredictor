@@ -23,4 +23,4 @@ Design Patterns
 - Delegation, Observer, TargetAction
 
 Message
- This prototype would have been completed if the lended system resources have been granted. Step 1 wasn't completed and step 2 has been completed functionaly. Request to go through implementation and allow me the some time to complete the assignment 
+ This prototype is partially completed with lent system resources. Step 1 wasn't completed and step 2 has been completed functionaly. Request to go through implementation and allow me the some time to complete the assignment 
