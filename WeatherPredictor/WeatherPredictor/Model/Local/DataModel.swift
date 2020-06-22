@@ -50,12 +50,38 @@ struct TemperatureInfo: Codable {
     }
 }
 
-struct WeatherInfo: Codable {
-    let description: String?
+extension TemperatureInfo {
+    var displayableFormat: String {
+        var displayTemperature: String = ""
+        if let minTemperature = tempMin {
+            displayTemperature = "Min : \(minTemperature.convertTemp(from: .kelvin, to: .celsius)))"
+        }
+        if let maxTemperature = tempMax {
+            displayTemperature = "Max : \(maxTemperature.convertTemp(from: .kelvin, to: .celsius))"
+        }
+        if let minTemperature = tempMin,
+            let maxTemperature = tempMax {
+            displayTemperature = "Min : \(minTemperature.convertTemp(from: .kelvin, to: .celsius)) Max: \(maxTemperature.convertTemp(from: .kelvin, to: .celsius))"
+        }
+        return displayTemperature
+    }
 }
 
-struct FilteredWeatherInfo {
-    var date: Double
-    var dateString: String
-    var list: [WeatherItem]
+extension Double {
+    var toDegree: Double {
+            return self * 180 / .pi
+    }
+    
+    func convertTemp(from inputTempType: UnitTemperature, to outputTempType: UnitTemperature) -> String {
+      let mf = MeasurementFormatter()
+      mf.numberFormatter.maximumFractionDigits = 0
+      mf.unitOptions = .providedUnit
+      let input = Measurement(value: self, unit: inputTempType)
+      let output = input.converted(to: outputTempType)
+      return mf.string(from: output)
+    }
+}
+
+struct WeatherInfo: Codable {
+    let description: String?
 }

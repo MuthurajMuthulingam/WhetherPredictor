@@ -18,6 +18,8 @@
 		20404755249F4B930035B5A8 /* WPForecastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20404754249F4B930035B5A8 /* WPForecastTableViewController.swift */; };
 		20404758249F4C350035B5A8 /* MMLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20404757249F4C350035B5A8 /* MMLocationManager.swift */; };
 		2040475A249F5E6C0035B5A8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20404759249F5E6C0035B5A8 /* DataModel.swift */; };
+		2040475E24A0378C0035B5A8 /* WeatherItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040475C24A0378B0035B5A8 /* WeatherItemTableViewCell.swift */; };
+		2040475F24A0378C0035B5A8 /* WeatherItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2040475D24A0378B0035B5A8 /* WeatherItemTableViewCell.xib */; };
 		396869C40B2C5927A89246B0 /* Pods_WeatherPredictor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705E821D4E45BF9AE126A98 /* Pods_WeatherPredictor.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		20404754249F4B930035B5A8 /* WPForecastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPForecastTableViewController.swift; sourceTree = "<group>"; };
 		20404757249F4C350035B5A8 /* MMLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMLocationManager.swift; sourceTree = "<group>"; };
 		20404759249F5E6C0035B5A8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2040475C24A0378B0035B5A8 /* WeatherItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemTableViewCell.swift; sourceTree = "<group>"; };
+		2040475D24A0378B0035B5A8 /* WeatherItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherItemTableViewCell.xib; sourceTree = "<group>"; };
 		BE32F16E75AE81C5C5A4E2DB /* Pods-WeatherPredictor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherPredictor.debug.xcconfig"; path = "Target Support Files/Pods-WeatherPredictor/Pods-WeatherPredictor.debug.xcconfig"; sourceTree = "<group>"; };
 		C91285DE6EFF444CF6D880B1 /* Pods-WeatherPredictor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherPredictor.release.xcconfig"; path = "Target Support Files/Pods-WeatherPredictor/Pods-WeatherPredictor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +103,7 @@
 		2040474A249F35000035B5A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2040475B24A037430035B5A8 /* Cells */,
 				2040473B249F2B060035B5A8 /* Main.storyboard */,
 			);
 			path = View;
@@ -135,6 +140,15 @@
 				20404757249F4C350035B5A8 /* MMLocationManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2040475B24A037430035B5A8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2040475C24A0378B0035B5A8 /* WeatherItemTableViewCell.swift */,
+				2040475D24A0378B0035B5A8 /* WeatherItemTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8DDE7E776631A0B1D202A897 /* Pods */ = {
@@ -217,6 +231,7 @@
 				20404742249F2B130035B5A8 /* LaunchScreen.storyboard in Resources */,
 				2040473F249F2B130035B5A8 /* Assets.xcassets in Resources */,
 				2040473D249F2B060035B5A8 /* Main.storyboard in Resources */,
+				2040475F24A0378C0035B5A8 /* WeatherItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +289,7 @@
 				20404736249F2B060035B5A8 /* AppDelegate.swift in Sources */,
 				20404755249F4B930035B5A8 /* WPForecastTableViewController.swift in Sources */,
 				20404758249F4C350035B5A8 /* MMLocationManager.swift in Sources */,
+				2040475E24A0378C0035B5A8 /* WeatherItemTableViewCell.swift in Sources */,
 				2040475A249F5E6C0035B5A8 /* DataModel.swift in Sources */,
 				2040474F249F39960035B5A8 /* WPNetworkModelHandler.swift in Sources */,
 				20404738249F2B060035B5A8 /* SceneDelegate.swift in Sources */,

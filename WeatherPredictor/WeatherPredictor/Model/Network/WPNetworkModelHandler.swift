@@ -25,9 +25,8 @@ enum WPAPIResult<T> {
 
 // MARK: - Public Methods
 extension WPNetworkModelHandler {
-    class func fetchForecast(for location: CLLocationCoordinate2D, completion: @escaping WPNetworkModelHandlerResponse) {
-        let weatherForcastAPIString: String = "http://samples.openweathermap.org/data/2.5/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(apiKey)"
-        guard let url = URL(string: weatherForcastAPIString) else { return }
+    class func performRequest(with apiString: String, completion: @escaping WPNetworkModelHandlerResponse) {
+        guard let url = URL(string: apiString) else { return }
         MMRequest(from: url, params: nil, method: .get, responseType: .json, timeout: 60, headers: nil).execute { response, request in
             guard let error = response.error else {
                 if let rawData = response.rawData {
@@ -37,5 +36,16 @@ extension WPNetworkModelHandler {
             }
             completion(.failure(error: error))
         }
+    }
+    
+    class func fetchForecast(for location: CLLocationCoordinate2D, completion: @escaping WPNetworkModelHandlerResponse) {
+        let weatherForcastAPIString: String = "http://samples.openweathermap.org/data/2.5/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(apiKey)"
+        performRequest(with: weatherForcastAPIString, completion: completion)
+    }
+    
+    class func fetchWeather(forCiry city: String, completion: @escaping WPNetworkModelHandlerResponse) {
+        // https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=439d4b804bc8187953eb36d2a8c26a02
+        let weatherAPIString: String = "http://samples.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)"
+        performRequest(with: weatherAPIString, completion: completion)
     }
 }
